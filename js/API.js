@@ -1,4 +1,4 @@
-const url = 'http://localhost:4000/license' //'https://api-test-license.onrender.com/licenses'
+const url = 'https://api-test-license.onrender.com/licenses'
 
 export const nuevaLicencia = async license => {
     
