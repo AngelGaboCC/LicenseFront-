@@ -9,7 +9,8 @@ export const nuevaLicencia = async license => {
             headers: {
                 'Content-Type':'application/json'
 
-            }
+            },
+            mode: "cors"
         });
         window.location.href = 'index.html';
     } catch (error) {
@@ -20,7 +21,7 @@ export const nuevaLicencia = async license => {
 
 export const obtenerLicencias = async () => {
     try {
-        const resultado = await fetch(url);
+        const resultado = await fetch(url, {mode: "cors"});
         const licencias = await resultado.json();
         return licencias;
 
@@ -33,7 +34,8 @@ export const obtenerLicencias = async () => {
 export const eliminarLicencia = async id => {
     try {
         await fetch(`${url}/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            mode: "cors"
         })
     } catch (error) {
         console.log(error);
@@ -42,7 +44,7 @@ export const eliminarLicencia = async id => {
 
 export const obtenerLicencia = async id => {
     try {
-        const resultado = await fetch(`${url}/${id}`);
+        const resultado = await fetch(`${url}/${id}`, {mode: "cors"});
         const licencia = await resultado.json();
         
         return licencia;
@@ -58,7 +60,8 @@ export const actualizarLicencia = async licencia => {
             body: JSON.stringify(licencia),
             headers: {
                 'Content-type' : 'application/json'
-            }
+            },
+            mode: "cors"
         });
         window.location.href = 'index.html';
     } catch (error) {
