@@ -8,21 +8,21 @@ import {nuevaLicencia} from './API.js';
     function validarLicencia(e){
         e.preventDefault();
 
-        const companyName = document.querySelector('#company_name').value 
-        const fullName = document.querySelector('#user_full_name').value 
-        const jobTitle = document.querySelector('#job_title').value 
-        const email = document.querySelector('#user_email').value 
-        const userName = document.querySelector('#software_user_name').value 
-        const expirationDate = document.querySelector('#expiration_date').value 
+        const company_name = document.querySelector('#company_name').value 
+        const user_full_name = document.querySelector('#user_full_name').value 
+        const job_title = document.querySelector('#job_title').value 
+        const user_email = document.querySelector('#user_email').value 
+        const software_user_name = document.querySelector('#software_user_name').value 
+        const expiration_date = document.querySelector('#expiration_date').value 
         const version = document.querySelector('#version').value 
 
         const license = {
-            companyName,
-            fullName,
-            jobTitle,
-            email,
-            userName,
-            expirationDate,
+            company_name,
+            user_full_name,
+            job_title,
+            user_email,
+            software_user_name,
+            expiration_date,
             version
         }
 

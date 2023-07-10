@@ -1,4 +1,4 @@
-const url = 'https://api-test-license.onrender.com/licenses'
+const url = 'http://127.0.0.1:8000/licenses/'
 
 export const nuevaLicencia = async license => {
     
@@ -9,8 +9,8 @@ export const nuevaLicencia = async license => {
             headers: {
                 'Content-Type':'application/json'
 
-            },
-            mode: "cors"
+            }
+            
         });
         window.location.href = 'index.html';
     } catch (error) {
@@ -21,7 +21,7 @@ export const nuevaLicencia = async license => {
 
 export const obtenerLicencias = async () => {
     try {
-        const resultado = await fetch(url, {mode: "cors"});
+        const resultado = await fetch(url);
         const licencias = await resultado.json();
         return licencias;
 
@@ -33,10 +33,10 @@ export const obtenerLicencias = async () => {
 
 export const eliminarLicencia = async id => {
     try {
-        await fetch(`${url}/${id}`, {
-            method: 'DELETE',
-            mode: "cors"
+        await fetch(`${url}${id}`, {
+            method: 'DELETE'
         })
+    window.location.href = 'index.html';
     } catch (error) {
         console.log(error);
     }
@@ -44,7 +44,7 @@ export const eliminarLicencia = async id => {
 
 export const obtenerLicencia = async id => {
     try {
-        const resultado = await fetch(`${url}/${id}`, {mode: "cors"});
+        const resultado = await fetch(`${url}${id}`);
         const licencia = await resultado.json();
         
         return licencia;
@@ -55,13 +55,12 @@ export const obtenerLicencia = async id => {
 
 export const actualizarLicencia = async licencia => {
     try {
-        await fetch(`${url}/${licencia.id}`, {
+        await fetch(`${url}${licencia.id}`, {
             method: 'PUT',
             body: JSON.stringify(licencia),
             headers: {
                 'Content-type' : 'application/json'
-            },
-            mode: "cors"
+            }  
         });
         window.location.href = 'index.html';
     } catch (error) {

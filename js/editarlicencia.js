@@ -31,14 +31,14 @@ import {mostrarAlerta, validar} from './funciones.js';
     });
 
     function mostrarLicencia(licencia) {
-        const {companyName, fullName, jobTitle, email, userName, expirationDate, version, id} = licencia;
+        const {company_name, user_full_name, job_title, user_email, software_user_name, expiration_date, version, id} = licencia;
 
-        companyNameInput.value = companyName;
-        fullNameInput.value = fullName;
-        jobTitleInput.value = jobTitle;
-        emailInput.value = email;
-        userNameInput.value = userName;
-        expirationDateInput.value = expirationDate;
+        companyNameInput.value = company_name;
+        fullNameInput.value = user_full_name;
+        jobTitleInput.value = job_title;
+        emailInput.value = user_email;
+        userNameInput.value = software_user_name;
+        expirationDateInput.value = expiration_date;
         versionInput.value = version;
         idInputInput.value = id;
         
@@ -48,12 +48,12 @@ import {mostrarAlerta, validar} from './funciones.js';
         e.preventDefault();
 
         const license = {
-            companyName: companyNameInput.value, 
-            fullName: fullNameInput.value, 
-            jobTitle: jobTitleInput.value,
-            email: emailInput.value,
-            userName: userNameInput.value,
-            expirationDate: expirationDateInput.value,
+            company_name: companyNameInput.value, 
+            user_full_name: fullNameInput.value, 
+            job_title: jobTitleInput.value,
+            user_email: emailInput.value,
+            software_user_name: userNameInput.value,
+            expiration_date: expirationDateInput.value,
             version: versionInput.value,
             id: parseInt(idInputInput.value)
         }

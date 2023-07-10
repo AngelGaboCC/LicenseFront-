@@ -13,28 +13,28 @@ import {obtenerLicencias, eliminarLicencia} from './API.js'
         const licencias = await obtenerLicencias();
 
         licencias.forEach(licencia => {
-            const {companyName, fullName, jobTitle, email, userName, expirationDate, version, id} = licencia;
-            
+            const {company_name, user_full_name, job_title, user_email, software_user_name, expiration_date, version, id} = licencia;
+            console.log(licencia);
             const row = document.createElement('tr');
 
             row.innerHTML += `
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                    <p class="text-sm leading-5 font-medium text-gray-700 text-lg  font-bold"> ${companyName} </p>
+                    <p class="text-sm leading-5 font-medium text-gray-700 text-lg  font-bold"> ${company_name} </p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 ">
-                    <p class="text-gray-700">${fullName}</p>
+                    <p class="text-gray-700">${user_full_name}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
-                    <p class="text-gray-600">${jobTitle}</p>
+                    <p class="text-gray-600">${job_title}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
-                    <p class="text-gray-600">${email}</p>
+                    <p class="text-gray-600">${user_email}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
-                    <p class="text-gray-600">${userName}</p>
+                    <p class="text-gray-600">${software_user_name}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
-                    <p class="text-gray-600">${expirationDate}</p>
+                    <p class="text-gray-600">${expiration_date}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
                     <p class="text-gray-600">${version}</p>
