@@ -13,7 +13,7 @@ import {obtenerLicencias, eliminarLicencia} from './API.js'
         const licencias = await obtenerLicencias();
 
         licencias.forEach(licencia => {
-            const {company_name, user_full_name, job_title, user_email, software_user_name, expiration_date, version, id} = licencia;
+            const {company_name, user_full_name, job_title, user_email, software_name, software_user_name, expiration_date, version, id} = licencia;
             console.log(licencia);
             const row = document.createElement('tr');
 
@@ -29,6 +29,9 @@ import {obtenerLicencias, eliminarLicencia} from './API.js'
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
                     <p class="text-gray-600">${user_email}</p>
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
+                    <p class="text-gray-600">${software_name}</p>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200  leading-5 text-gray-700">    
                     <p class="text-gray-600">${software_user_name}</p>

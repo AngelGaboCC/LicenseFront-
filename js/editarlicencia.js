@@ -10,6 +10,7 @@ import {mostrarAlerta, validar} from './funciones.js';
     const fullNameInput = document.querySelector('#user_full_name')
     const jobTitleInput = document.querySelector('#job_title')
     const emailInput = document.querySelector('#user_email')
+    const softwareInput = document.querySelector('#software_name')
     const userNameInput = document.querySelector('#software_user_name')
     const expirationDateInput = document.querySelector('#expiration_date')
     const versionInput = document.querySelector('#version') 
@@ -31,12 +32,13 @@ import {mostrarAlerta, validar} from './funciones.js';
     });
 
     function mostrarLicencia(licencia) {
-        const {company_name, user_full_name, job_title, user_email, software_user_name, expiration_date, version, id} = licencia;
+        const {company_name, user_full_name, job_title, user_email,software_name, software_user_name, expiration_date, version, id} = licencia;
 
         companyNameInput.value = company_name;
         fullNameInput.value = user_full_name;
         jobTitleInput.value = job_title;
         emailInput.value = user_email;
+        softwareInput.value = software_name;
         userNameInput.value = software_user_name;
         expirationDateInput.value = expiration_date;
         versionInput.value = version;
@@ -52,6 +54,7 @@ import {mostrarAlerta, validar} from './funciones.js';
             user_full_name: fullNameInput.value, 
             job_title: jobTitleInput.value,
             user_email: emailInput.value,
+            software_name: softwareInput.value,
             software_user_name: userNameInput.value,
             expiration_date: expirationDateInput.value,
             version: versionInput.value,
